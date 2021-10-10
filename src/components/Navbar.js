@@ -7,7 +7,7 @@ export const Navbar = () => {
             <Link to='/bio'>Bio</Link>
             <Link to='/discography'>Discography</Link>
             <Link to='/members'>Members</Link>
-            <Link to='/contacts'>Contacts</Link>
+            <Link to='/contact'>Contacts</Link>
         </div>
     )
 }

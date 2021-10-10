@@ -8,5 +8,14 @@ export const types = {
     
     eventLoad:'[event] Load',
     eventLoadAPI:'[event] Load API',
-    eventSaveAPI:'[event] Save API'
+    eventSaveAPI:'[event] Save API',
+
+    albumLastLoad:'[album] Last load',
+    albumLastLoadAPI:'[album] Last load API',
+    albumsLoad:'[album] load',
+    albumsLoadAPI:'[album] load API',
+    albumSaveAPI:'[album] Save API',
+
+    membersLoad:'[members] load',
+    membersLoadAPI:'[members] load API',
 }
