@@ -2,12 +2,11 @@ import Swal from "sweetalert2";
 import { fetchSinToken } from "../helpers/fetch"
 import { types } from "../types/types";
 
-export const startLogin = (user, password)=>{
+export const startLogin = (identifier, password)=>{
     return async(dispatch)=>{
-        const resp = await fetchSinToken('auth', {user, password}, 'POST');
+        const resp = await fetchSinToken('auth/local', {identifier, password}, 'POST');
         const body = await resp.json();
-        console.log(resp)
-        if(body.ok){
+        if(body){
             localStorage.setItem('token', body.jwt);
 
             dispatch(login({
