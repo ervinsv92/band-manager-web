@@ -1,4 +1,4 @@
-import { fetchSinToken } from "../helpers/fetch"
+import { fetchSinToken, fetchConToken } from "../helpers/fetch";
 import { types } from "../types/types";
 
 export const bandLoadAPI = ()=>{
@@ -17,4 +17,19 @@ export const bandLoadAPI = ()=>{
 const bandLoad = (band)=>({
     type:types.bandLoad,
     payload:band
-})
+});
+
+export const saveBand = (band)=>{
+    return async(dispatch)=>{
+        try {
+            const resp = await fetchConToken(`bands/${band.id}`, {
+                id:band.id,
+                name:band.name,
+                biography:band.biography
+            }, 'PUT');
+            //const body = await resp.json();    
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}

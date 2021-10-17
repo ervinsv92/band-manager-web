@@ -19,6 +19,7 @@ import { LoginAdminPage } from '../components/LoginAdminPage';
 import { MemberAdminPage } from '../components/MemberAdminPage';
 import { MembersAdminPage } from '../components/MembersAdminPage';
 import { MembersPage } from '../components/MembersPage';
+import { MenuAdminPage } from '../components/MenuAdminPage';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
@@ -36,6 +37,7 @@ export const AppRouter = () => {
                     <PublicRoute exact path="/contact" component={ContactsPage} isAuthenticated={isLogued} />
                     <PublicRoute exact path="/events" component={EventsPage} isAuthenticated={isLogued} />
                     <PublicRoute exact path="/admin" component={LoginAdminPage} isAuthenticated={isLogued} />
+                    <PrivateRoute exact path="/admin/menu" component={MenuAdminPage} isAuthenticated={isLogued} />
                     <PrivateRoute exact path="/admin/band" component={BandAdminPage} isAuthenticated={isLogued} />
                     <PrivateRoute exact path="/admin/albums" component={AlbumsAdminPage} isAuthenticated={isLogued} />
                     <PrivateRoute exact path="/admin/album/:id" component={AlbumAdminPage} isAuthenticated={isLogued} />
