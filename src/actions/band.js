@@ -27,6 +27,8 @@ export const saveBand = (band)=>{
                 name:band.name,
                 biography:band.biography
             }, 'PUT');
+
+            dispatch(bandLoadAPI());
             //const body = await resp.json();    
         } catch (error) {
             console.log(error);

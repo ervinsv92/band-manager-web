@@ -25,9 +25,8 @@ export const BandAdminPage = () => {
     }
 
     useEffect(() => {
-        console.log("hola")
-        //reset({name:band.name, biography:band.biography});
-    }, [band, reset])
+        reset({name:band.name, biography:band.biography});
+    }, [band])
 
     useEffect(() => {
         dispatch(bandLoadAPI());
