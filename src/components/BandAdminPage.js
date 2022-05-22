@@ -17,11 +17,17 @@ export const BandAdminPage = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
+        let file = document.getElementById("fBaner").files[0];
+        let fileUpload = null;
+        if(file){
+            fileUpload = file;
+        }
+
         dispatch(saveBand({
             id:band.id,
             name, 
             biography
-        }));
+        }, fileUpload));
     }
 
     useEffect(() => {
@@ -40,6 +46,9 @@ export const BandAdminPage = () => {
                 <input name="name" placeholder="name" value={name} onChange={handleInputChange}/>
                 <br/>
                 <textarea name="biography" placeholder="biography" value={biography} onChange={handleInputChange}/>
+                <br/>
+                <label>Baner</label>
+                <input id="fBaner" type="file" />
                 <br/>
                 <button>Guardar</button>
             </form>

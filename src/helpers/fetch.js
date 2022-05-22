@@ -40,7 +40,22 @@ const fetchConToken = (endpoint, data, method = 'GET')=>{
     }
 }
 
+const fetchConTokenFile = (endpoint, data, method = 'POST')=>{
+    const url = `${baseUrl}/${endpoint}`;
+    const token = localStorage.getItem('token') || '';
+    console.log(data)
+    return fetch(url, {
+        method,
+        headers:{
+            'mimeType': 'multipart/form-data',
+            'Authorization': `bearer ${token}`
+        },
+        body:data 
+    })
+}
+
 export {
     fetchSinToken,
-    fetchConToken
+    fetchConToken,
+    fetchConTokenFile
 }
